@@ -10,7 +10,8 @@ import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.system.MemoryUtil.NULL;
 
 // Singleton class for creating a window
-public class Window {
+public class Window
+{
     private int width;
     private int height;
     private long glfwWindow;
@@ -77,6 +78,10 @@ public class Window {
         {
             throw new IllegalStateException("Failed to create the GLFW Window.");
         }
+
+        glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback);
+        glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
+        glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
 
         // Make the OpenGL context current
         glfwMakeContextCurrent(glfwWindow);
