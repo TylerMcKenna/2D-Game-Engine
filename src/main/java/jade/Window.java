@@ -18,6 +18,8 @@ public class Window
 
     private String title;
 
+    private float r, g, b, a;
+
     private static Window window = null;
 
     private Window()
@@ -25,6 +27,10 @@ public class Window
         this.width = 1920;
         this.height = 1080;
         this.title = "Mario";
+        r = 1;
+        b = 1;
+        g = 1;
+        a = 1;
     }
 
     public static Window get()
@@ -82,6 +88,7 @@ public class Window
         glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback);
         glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
         glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
+        glfwSetKeyCallback(glfwWindow, KeyListener::keyCallback);
 
         // Make the OpenGL context current
         glfwMakeContextCurrent(glfwWindow);
@@ -103,10 +110,10 @@ public class Window
     {
         while (!glfwWindowShouldClose(glfwWindow))
         {
-            // Pool events
+            // Poll events
             glfwPollEvents();
 
-            glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+            glClearColor(r, g, b, a);
             glClear(GL_COLOR_BUFFER_BIT);
 
             glfwSwapBuffers(glfwWindow);

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf8ff971-3b5b-49cc-b7a7-66cebd77d036" name="Changes" comment="Tutorial 2 finished">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jade/KeyListener.java" afterDir="false" />
+    <list default="true" id="cf8ff971-3b5b-49cc-b7a7-66cebd77d036" name="Changes" comment="Working on tutorial 3 almost done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jade/MouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/MouseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jade/KeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/KeyListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jade/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +28,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/jade/Window.java" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -82,12 +84,20 @@
       <option name="project" value="LOCAL" />
       <updated>1678655205018</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Working on tutorial 3 almost done">
+      <created>1678675281619</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678675281619</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Tutorial 2 finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tutorial 2 finished" />
+    <MESSAGE value="Working on tutorial 3 almost done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on tutorial 3 almost done" />
   </component>
 </project>
