@@ -47,10 +47,11 @@ public class Window
         {
             case 0:
                 currentScene = new LevelEditorScene();
-                //currentScene.init();
+                currentScene.init();
                 break;
             case 1:
                 currentScene = new LevelScene();
+                currentScene.init();
                 break;
             default:
                 assert false : "Unknown scene '" + newScene + "'";
@@ -143,7 +144,6 @@ public class Window
         while (!glfwWindowShouldClose(glfwWindow))
         {
             fps = 1.0f / dt;
-            System.out.println(fps);
 
             // Poll events
             glfwPollEvents();
