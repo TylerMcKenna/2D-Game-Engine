@@ -14,12 +14,13 @@ public class LevelEditorScene extends Scene
             "layout (location=0) in vec3 aPos;\n" +
             "layout (location=1) in vec4 aColor;\n" +
             "\n" +
-            "//f stands for fragment\n" +
+            "//f stands for fragment (because it is going to the fragment shader)\n" +
             "out vec4 fColor;\n" +
             "\n" +
             "void main()\n" +
             "{\n" +
             "    fColor = aColor;\n" +
+            "    // gl_Postion is a variable that always exists that we need to define\n" +
             "    gl_Position = vec4(aPos, 1.0);\n" +
             "}";
 
@@ -35,6 +36,27 @@ public class LevelEditorScene extends Scene
             "}";
 
     private int vertexID, fragmentID, shaderProgram;
+
+    private float[] vertexArray =
+    {
+        // position              // color
+        0.5f, -0.5f, 0.0f,       1.0f, 0.0f, 0.0f, 1.0f, // Bottom right 0
+       -0.5f,  0.5f, 0.0f,       0.0f, 1.0f, 0.0f, 1.0f, // Top left     1
+        0.5f,  0.5f, 0.0f,       0.0f, 0.0f, 1.0f, 1.0f, // Top right    2
+       -0.5f, -0.5f, 0.0f,       1.0f, 1.0f, 0.0f, 1.0f  // Bottom left  3
+    };
+
+    private int[] elementArray =
+    {
+        /*
+                X        X
+
+
+                X        X
+         */
+        2, 1, 0, // Top right triangle
+        0, 1, 3  // Bottom left triangle
+    };
 
     public LevelEditorScene()
     {
@@ -60,11 +82,11 @@ public class LevelEditorScene extends Scene
         {
             int len = glGetShaderi(vertexID, GL_INFO_LOG_LENGTH);
             System.out.println("Error: 'defaultShader.glsl'\n\tVertex shader compilation failed.");
-            System.out.println(glGetShaderInfoLog(vertexID,len));
+            System.out.println(glGetShaderInfoLog(vertexID, len));
             assert false : "";
         }
 
-        // Load and compile the vertex shader
+        // Load and compile the fragment shader
         fragmentID = glCreateShader(GL_FRAGMENT_SHADER);
         // Pass the shader source code to the GPU
         glShaderSource(fragmentID, fragmentShaderSrc);
@@ -76,7 +98,7 @@ public class LevelEditorScene extends Scene
         {
             int len = glGetShaderi(fragmentID, GL_INFO_LOG_LENGTH);
             System.out.println("Error: 'defaultShader.glsl'\n\tFragment shader compilation failed.");
-            System.out.println(glGetShaderInfoLog(fragmentID,len));
+            System.out.println(glGetShaderInfoLog(fragmentID, len));
             assert false : "";
         }
 
@@ -86,12 +108,13 @@ public class LevelEditorScene extends Scene
         glAttachShader(shaderProgram, fragmentID);
         glLinkProgram(shaderProgram);
 
+        // Check for linking errors
         success = glGetProgrami(shaderProgram, GL_LINK_STATUS);
         if (success == GL_FALSE)
         {
-            int len = glGetProgrami(shaderProgram, GL_INFO_LOG_LENGTH);            System.out.println("Error: 'defaultShader.glsl'\n\tVertex shader compilation failed.");
+            int len = glGetProgrami(shaderProgram, GL_INFO_LOG_LENGTH);
             System.out.println("Error: 'defaultShader.glsl'\n\tLinking of shaders failed.");
-            System.out.println(glGetProgramInfoLog(shaderProgram,len));
+            System.out.println(glGetProgramInfoLog(shaderProgram, len));
             assert false : "";
         }
     }
