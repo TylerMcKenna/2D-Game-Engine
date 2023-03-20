@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf8ff971-3b5b-49cc-b7a7-66cebd77d036" name="Changes" comment="Working on tutorial #5 at 18:23 seconds.">
+    <list default="true" id="cf8ff971-3b5b-49cc-b7a7-66cebd77d036" name="Changes" comment="Tutorial #5 completed. What a nightmare.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jade/LevelEditorScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/LevelEditorScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679100193555</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Tutorial #5 completed. What a nightmare.">
+      <created>1679111697492</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679111697492</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -124,6 +130,7 @@
     <MESSAGE value="Tutorial 3 finished" />
     <MESSAGE value="Turns out the last one was tutorial 2, now I've finished tutorial 3." />
     <MESSAGE value="Working on tutorial #5 at 18:23 seconds." />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on tutorial #5 at 18:23 seconds." />
+    <MESSAGE value="Tutorial #5 completed. What a nightmare." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tutorial #5 completed. What a nightmare." />
   </component>
 </project>
