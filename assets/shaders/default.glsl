@@ -4,7 +4,7 @@
 layout (location=0) in vec3 aPos;
 layout (location=1) in vec4 aColor;
 
-// Saying we're gonna upload two variables- it makes not sense you'll get it later
+// Saying we're gonna upload two variables- it makes no sense you'll get it later
 uniform mat4 uProjection;
 uniform mat4 uView;
 
@@ -21,11 +21,13 @@ void main()
 #type fragment
 #version 330 core
 
+uniform float uTime;
+
 in vec4 fColor;
 
 out vec4 color;
 
 void main()
 {
-    color = fColor;
+  color = sin(uTime) * fColor;
 }

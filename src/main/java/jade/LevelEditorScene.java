@@ -4,6 +4,7 @@ import org.joml.Vector2f;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL20;
 import renderer.Shader;
+import util.Time;
 
 import java.awt.event.KeyEvent;
 import java.nio.FloatBuffer;
@@ -20,10 +21,10 @@ public class LevelEditorScene extends Scene
     private float[] vertexArray =
     {
         // position              // color
-        50.5f, -50.5f, 0.0f,       1.0f, 0.0f, 0.0f, 1.0f, // Bottom right 0
-       -50.5f,  50.5f, 0.0f,       0.0f, 1.0f, 0.0f, 1.0f, // Top left     1
-        50.5f,  50.5f, 0.0f,       0.0f, 0.0f, 1.0f, 1.0f, // Top right    2
-       -50.5f, -50.5f, 0.0f,       1.0f, 1.0f, 0.0f, 1.0f  // Bottom left  3
+        100.5f, 0.5f, 0.0f,       1.0f, 0.0f, 0.0f, 1.0f, // Bottom right 0
+       0.5f,  100.5f, 0.0f,       0.0f, 1.0f, 0.0f, 1.0f, // Top left     1
+        100.5f,  100.5f, 0.0f,       0.0f, 0.0f, 1.0f, 1.0f, // Top right    2
+       0.5f, 0.5f, 0.0f,       1.0f, 1.0f, 0.0f, 1.0f  // Bottom left  3
     };
 
     private int[] elementArray =
@@ -92,9 +93,12 @@ public class LevelEditorScene extends Scene
     @Override
     public void update(float dt)
     {
+        camera.position.x -= dt * 50.0f;
+
         defaultShader.use();
         defaultShader.uploadMat4f("uProjection", camera.getProjectionMatrix());
         defaultShader.uploadMat4f("uView", camera.getViewMatrix());
+        defaultShader.uploadFloat("uTime", Time.getTime());
         // Bind the VAO that we're using
         glBindVertexArray(vaoID);
 
