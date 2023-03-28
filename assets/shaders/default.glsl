@@ -15,7 +15,7 @@ void main()
 {
     fColor = aColor;
     // gl_Postion is a variable that always exists that we need to define
-    gl_Position = uProjection * uView * (aPos, 1.0);
+    gl_Position = uProjection * uView * vec4(aPos, 1.0);
 }
 
 #type fragment
@@ -29,5 +29,6 @@ out vec4 color;
 
 void main()
 {
-  color = sin(uTime) * fColor;
+  float noise = fract(sin(dot(fColor.xy, vec2(12.989, 78.233))) * 43758.5453);
+  color = fColor * noise;
 }
