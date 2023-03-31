@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf8ff971-3b5b-49cc-b7a7-66cebd77d036" name="Changes" comment="Tutorial #8 17:32 man idk vertex shader is goofin rn!!!!">
+      <change afterPath="$PROJECT_DIR$/src/main/java/renderer/Texture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/shaders/default.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/assets/shaders/default.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jade/LevelEditorScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/LevelEditorScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
