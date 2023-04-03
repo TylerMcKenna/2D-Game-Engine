@@ -4,6 +4,7 @@ import org.joml.Vector2f;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL20;
 import renderer.Shader;
+import renderer.Texture;
 import util.Time;
 
 import java.awt.event.KeyEvent;
@@ -21,12 +22,13 @@ public class LevelEditorScene extends Scene
     private float[] vertexArray =
     {
         // position            // color                     //UV Coordinates
-        100f,   0f, 0.0f,      1.0f, 0.0f, 0.0f, 1.0f,      1, 0, // Bottom right 0
-          0f, 100f, 0.0f,      0.0f, 1.0f, 0.0f, 1.0f,      0, 1, // Top left     1
-        100f, 100f, 0.0f,      0.0f, 0.0f, 1.0f, 1.0f,      1, 1, // Top right    2
-          0f,   0f, 0.0f,      1.0f, 1.0f, 0.0f, 1.0f,      0, 0  // Bottom left  3
+        100f,   0f, 0.0f,      1.0f, 0.0f, 0.0f, 1.0f,      1, 1, // Bottom right 0
+          0f, 100f, 0.0f,      0.0f, 1.0f, 0.0f, 1.0f,      0, 0, // Top left     1
+        100f, 100f, 0.0f,      0.0f, 0.0f, 1.0f, 1.0f,      1, 0, // Top right    2
+          0f,   0f, 0.0f,      1.0f, 1.0f, 0.0f, 1.0f,      0, 1  // Bottom left  3
     };
 
+    // IMPORTANT: Must be in counter-clockwise order
     private int[] elementArray =
     {
         /*
@@ -42,6 +44,7 @@ public class LevelEditorScene extends Scene
     private int vaoID, vboID, eboID;
 
     private Shader defaultShader;
+    private Texture testTexture;
 
     public LevelEditorScene()
     {
@@ -54,6 +57,7 @@ public class LevelEditorScene extends Scene
         this.camera = new Camera(new Vector2f());
         defaultShader = new Shader("assets/shaders/default.glsl");
         defaultShader.compile();
+        this.testTexture = new Texture("assets/images/YagamiPopping.jpg");
 
         // ===========================================================
         // Generate VAO, VNO, and EBO buffer objects, and sent to GPU
@@ -91,14 +95,23 @@ public class LevelEditorScene extends Scene
 
         glVertexAttribPointer(2, uvSize, GL_FLOAT, false, vertexSizeBytes, (positionsSize + colorSize) * Float.BYTES);
         glEnableVertexAttribArray(2);
+
+
     }
 
     @Override
     public void update(float dt)
     {
         camera.position.x -= dt * 50.0f;
+        camera.position.y -= dt * 50.0f;
 
         defaultShader.use();
+
+        // Upload texture to shader
+        defaultShader.uploadTexture("TEX_SAMPLER", 0);
+        glActiveTexture(GL_TEXTURE0);
+        testTexture.bind();
+
         defaultShader.uploadMat4f("uProjection", camera.getProjectionMatrix());
         defaultShader.uploadMat4f("uView", camera.getViewMatrix());
         defaultShader.uploadFloat("uTime", Time.getTime());
@@ -108,6 +121,7 @@ public class LevelEditorScene extends Scene
         // Enable the vertex attribute pointers
         glEnableVertexAttribArray(0);
         glEnableVertexAttribArray(1);
+
 
         glDrawElements(GL_TRIANGLES, elementArray.length, GL_UNSIGNED_INT, 0);
 
