@@ -1,5 +1,6 @@
 package jade;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameObject
@@ -10,6 +11,7 @@ public class GameObject
 
     public GameObject(String name) {
         this.name = name;
+        this.components = new ArrayList<>();
     }
 
     public <T extends Component> T getComponent(Class<T> componentClass) {
@@ -42,13 +44,13 @@ public class GameObject
     }
 
     public void update(float dt) {
-        for (int i=0; i < components.size(); i++) {
+        for (int i = 0; i < components.size(); i++) {
             components.get(i).update(dt);
         }
     }
 
     public void start() {
-        for (int i =0; i < components.size(); i++) {
+        for (int i = 0; i < components.size(); i++) {
             components.get(i).start();
         }
     }
