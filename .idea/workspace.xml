@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf8ff971-3b5b-49cc-b7a7-66cebd77d036" name="Changes" comment="Tutorial #10 19:00 I'm in jargonville!?!?!?!?!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/components/FontRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/components/SpriteRenderer.java" afterDir="false" />
+    <list default="true" id="cf8ff971-3b5b-49cc-b7a7-66cebd77d036" name="Changes" comment="Tutorial #10 Finished, told me im Finnish cause I couldnt eat spinish!">
+      <change afterPath="$PROJECT_DIR$/src/main/java/jade/Transform.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/renderer/RenderBatch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jade/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/Component.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/SpriteRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/SpriteRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jade/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jade/LevelEditorScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/LevelEditorScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jade/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jade/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jade/Window.java" afterDir="false" />
     </list>
@@ -168,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680898464624</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Tutorial #10 Finished, told me im Finnish cause I couldnt eat spinish!">
+      <created>1681415776246</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681415776246</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -184,6 +190,7 @@
     <MESSAGE value="Tutorial #8 17:32 man idk vertex shader is goofin rn!!!!" />
     <MESSAGE value="Tutorial #9 Light Yagami is popping off omg!" />
     <MESSAGE value="Tutorial #10 19:00 I'm in jargonville!?!?!?!?!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tutorial #10 19:00 I'm in jargonville!?!?!?!?!" />
+    <MESSAGE value="Tutorial #10 Finished, told me im Finnish cause I couldnt eat spinish!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tutorial #10 Finished, told me im Finnish cause I couldnt eat spinish!" />
   </component>
 </project>
